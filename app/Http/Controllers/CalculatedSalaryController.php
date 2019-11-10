@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\CalculatedSalary;
+use App\User;
+use App\Attendance;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
@@ -42,7 +44,57 @@ class CalculatedSalaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attendance = Attendance::all();
+        $emps = User::all();
+        
+        
+        if(!($attendance->isEmpty() && $emps->isEmpty())){
+
+
+            foreach ($emps as $emp) {
+                
+            $newSalary = new CalculatedSalary;
+            $newSalary->employee_email=$emp->email;
+            
+            $finance = DB::table('employee_financials')->where('id', $emp->id)->first();
+            $salgrup = DB::table('salary_groups')->where('group_name', $finance->sal_grp)->first();
+           
+            $newSalary->basic_salary=$salgrup->basic;
+            $newSalary->total_allowance= ($salgrup->fa + $salgrup->va);
+
+            $atten = DB::table('attendances')->where('emp_email', $emp->email)->first();
+            
+            if(!empty($atten)){
+
+            if(($atten->total_absence - $salgrup->minimum_attendance) > 0){
+
+            $newSalary->leave_nopay = ($atten->total_absence - $salgrup->minimum_attendance)*8*100;
+            
+            }else{
+
+                $newSalary->leave_nopay=0;
+
+            }
+            }else{
+                $newSalary->leave_nopay=0;
+            }
+
+            $newSalary->total_deduction= ($salgrup->fd + $salgrup->vd + $newSalary->leave_nopay);
+            
+            $newSalary->total_salary = ($newSalary->basic_salary + $newSalary->total_allowance - $newSalary->total_deduction);
+        
+            $newSalary->save();
+        
+        }
+
+
+
+
+        }
+        
+        
+
+        return back();
     }
 
     /**
