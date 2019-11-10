@@ -89,11 +89,16 @@
 
 <div class="box">
 
-    <div  style="padding:10px;">
-    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#createEmp"><i class="fa fa-user"></i> Add Employee
-    </button>
-    </div>
-    
+  <div  style="padding:10px;">
+      <button type="button" class="btn btn-danger pull-right" data-role="" data-toggle="modal" data-target="#deleteEvent">
+        <i class="glyphicon glyphicon-trash"></i>Delete
+     </button>
+     
+
+      
+        <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#createEmp"><i class="fa fa-user"></i> Add Employee
+        </button>
+      </div>
 
         <div class="box-header">
           <h3 class="box-title">Employee List</h3>

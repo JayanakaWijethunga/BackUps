@@ -134,6 +134,7 @@ class AttendanceController extends Controller
      */
     public function destroy(Attendance $attendance)
     {
-        //
+        DB::table('attendances')->delete();
+        return back();
     }
 }

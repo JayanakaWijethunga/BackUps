@@ -137,6 +137,8 @@ Route::post('/add_sal', 'SalaryGroupController@store')->name('addsal');
 
 Route::get('/attendance', 'AttendanceController@index')->name('employee.attendance');
 Route::post('/import', 'AttendanceController@store')->name('addattend');
+Route::delete('/delete_all_attendance','AttendanceController@destroy')->name('attendance.delete');
 
 Route::get('/salary_manage', 'CalculatedSalaryController@index')->name('employee.generate_sal');
 Route::post('/calculate_salary', 'CalculatedSalaryController@store')->name('cal_sal');
+Route::delete('/delete_all_salarydata','CalculatedSalaryController@destroy')->name('salarydata.delete');

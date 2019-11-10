@@ -73,6 +73,11 @@
 <div class="box">
 
     <div  style="padding:10px;">
+
+      <button type="button" class="btn btn-danger pull-right" data-role="" data-toggle="modal" data-target="#deletesal">
+        <i class="glyphicon glyphicon-trash"></i>Delete
+     </button>
+
       <form action="{{route('cal_sal')}}" method="post">
         {{csrf_field()}}
         <button type="submit"  class="btn btn-success pull-right" ><i class="fa fa-user"></i> Generate Salary</button>

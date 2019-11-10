@@ -293,8 +293,66 @@
   </div>
   <!-- /.modal -->
 
+  <div class="modal modal-danger fade in" id="deleteEvent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title pull-center" id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            
+        <form action="{{route('attendance.delete')}}" method="post">  
+
+            
+                {{ csrf_field() }}
+                <input type="hidden" name="_method" value="DELETE" />
+            
+            
+            <p>This Action will delete the record from the database, Permenantly</p>
+            <input type="hidden" name="empl_id" id="empl_id" value="">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">No,Close</button>
+          <button type="submit" class="btn btn-warning">Yes! Delete</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
 
 
+
+  
+  <div class="modal modal-danger fade in" id="deletesal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title pull-center" id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            
+        <form action="{{route('salarydata.delete')}}" method="post">  
+
+            
+                {{ csrf_field() }}
+                <input type="hidden" name="_method" value="DELETE" />
+            
+            
+            <p>This Action will delete the record from the database, Permenantly</p>
+            <input type="hidden" name="empl_id" id="empl_id" value="">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">No,Close</button>
+          <button type="submit" class="btn btn-warning">Yes! Delete</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
 
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 

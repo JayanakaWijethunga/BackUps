@@ -139,6 +139,7 @@ class CalculatedSalaryController extends Controller
      */
     public function destroy(CalculatedSalary $calculatedSalary)
     {
-        //
+        DB::table('calculated_salaries')->delete();
+        return back();
     }
 }
