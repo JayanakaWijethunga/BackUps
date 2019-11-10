@@ -16,24 +16,11 @@ class CreateDeductionTypesTable extends Migration
         Schema::create('deduction_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('deduction_type');
+            $table->integer('amount');
             $table->timestamps();
         });
 
-        DB::table('deduction_types')->insert(
-            array(
-                'deduction_type' => 'Travelling',
-                
-            ),
-
-        );
-
-        DB::table('deduction_types')->insert(
-            array(
-                'deduction_type' => 'Meals',
-                
-            ),
-
-        );
+        
     }
 
     /**

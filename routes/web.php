@@ -119,3 +119,24 @@ Route::get('/edit_events/{id}', 'Calender\EventController@edit')->name('event.ed
 Route::delete('/deleteevent','Calender\EventController@destroy');
 Route::get('/displayevents','Calender\EventController@show');
 Route::get('/edit_emps/{role}', 'Calender\EventController@showList')->name('event.showlist');
+
+//salary routes
+
+
+Route::get('/add_allowances','AllowanceController@index')->name('employee.allowances');
+Route::post('/add_allow', 'AllowanceController@store')->name('addallowance');
+
+Route::get('/add_deductions','DeductionController@index')->name('employee.deductions');
+Route::post('/add_deduct', 'DeductionController@store')->name('adddeduction');
+
+Route::get('/add_funds','FundController@index')->name('employee.funds');
+Route::post('/add_fund_levels', 'FundController@store')->name('addepf');
+
+Route::get('/add_sal_grp','SalaryGroupController@index')->name('employee.sal_grp');
+Route::post('/add_sal', 'SalaryGroupController@store')->name('addsal');
+
+Route::get('/attendance', 'AttendanceController@index')->name('employee.attendance');
+Route::post('/import', 'AttendanceController@store')->name('addattend');
+
+Route::get('/salary_manage', 'CalculatedSalaryController@index')->name('employee.generate_sal');
+Route::post('/calculate_salary', 'CalculatedSalaryController@store')->name('cal_sal');

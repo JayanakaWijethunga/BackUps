@@ -16,24 +16,11 @@ class CreateAllowanceTypesTable extends Migration
         Schema::create('allowance_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('allowance_type');
+            $table->integer('amount');
             $table->timestamps();
         });
 
-        DB::table('allowance_types')->insert(
-            array(
-                'allowance_type' => 'Travelling',
-                
-            ),
-
-        );
-
-        DB::table('allowance_types')->insert(
-            array(
-                'allowance_type' => 'Meals',
-                
-            ),
-
-        );
+       
     }
 
     /**

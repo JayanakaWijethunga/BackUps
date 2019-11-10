@@ -25,6 +25,12 @@
 <a href="{{ route('employee.records') }}">
 @endsection
 
+@section('allowance')
+<li class="">
+<a href="{{ route('employee.allowances') }}"> 
+<i class="fa fa-tasks"></i> <span>Manage Allowance</span></a></li>
+@endsection
+
 @section('myprofile')
 <a href="{{ route('user-myprofile') }}">
 @endsection

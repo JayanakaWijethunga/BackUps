@@ -88,6 +88,9 @@
 
         <i class="fa fa-tasks"></i> <span>@yield('functions01')</span></a></li>
 
+        @section('allowance')
+        @show
+
         <li class="">
 
         @section('myprofile')

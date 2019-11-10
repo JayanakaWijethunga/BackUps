@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+        Cyberduck\LaravelExcel\ExcelServiceProvider::class,
 
     ],
 

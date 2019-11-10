@@ -86,6 +86,10 @@
         @show
 
         <i class="fa fa-tasks"></i> <span>@yield('functions01')</span></a></li>
+
+        @section('allowance')
+        @show
+
         <li class="">
         @section('myprofile')
         @show
@@ -93,7 +97,10 @@
         <i class="fa fa-user"></i> <span>My Profile</span></a></li>
 
         @section('calander_event')
-            @show
+        @show
+
+        
+            
 
         <li class=""><a href="{{ route('logout') }}"
             onclick="event.preventDefault();
