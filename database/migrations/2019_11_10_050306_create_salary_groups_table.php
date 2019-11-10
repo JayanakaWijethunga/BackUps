@@ -26,6 +26,22 @@ class CreateSalaryGroupsTable extends Migration
             $table->integer('vd');
             $table->timestamps();
         });
+
+        DB::table('salary_groups')->insert(
+            array(
+                'group_name' => 'G1',
+                'des' => 'Basic Sal',
+                'basic' => 50500,
+                'epf_lvl' => 1000,
+                'minimum_attendance' => 4,
+                'fa' => 1203,
+                'fd' => 784,
+                'va' => 1203,
+                'vd' => 784,
+
+            ),
+
+        );
     }
 
     /**
