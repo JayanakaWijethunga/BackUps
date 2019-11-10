@@ -18,8 +18,8 @@ class CreateEmployeeFinancialsTable extends Migration
             $table->string('bank');
             $table->string('bbranch');
             $table->string('acc');
-            $table->string('fixed_allowances');
-            $table->string('fixed_deductions');
+            $table->string('sal_grp');
+            
             
 
             $table->timestamps();

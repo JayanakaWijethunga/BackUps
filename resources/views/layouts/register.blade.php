@@ -269,30 +269,25 @@
                         </div>
                      </div>
 
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Fixed Allowances</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span><input id="fixed_allowances" name="fixed_allowances" placeholder="Fixed Allowances" class="form-control"  value="" type="text"></div>
-                               @if ($errors->first('fixed_allowances'))
-                                <span class="invalid-feedback glyphicon glyphicon-warning-sign" role="alert">
-                                <strong>{{ $errors->first('fixed_allowances') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                         </div>
-
-                         <div class="form-group">
-                            <label class="col-md-4 control-label">Fixed Deductions</label>
-                            <div class="col-md-8 inputGroupContainer">
-                               <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span><input id="fixed_deductions" name="fixed_deductions" placeholder="Fixed Deductions" class="form-control"  value="" type="text"></div>
-                               @if ($errors->first('fixed_deductions'))
-                                <span class="invalid-feedback glyphicon glyphicon-warning-sign" role="alert">
-                                <strong>{{ $errors->first('fixed_deductions') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                           
-                         </div>
+                     <div class="form-group">
+                        <label class="col-md-4 control-label">Salary Group</label>
+                        <div class="col-md-8 inputGroupContainer">
+                           <div class="input-group">
+                              <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-home"></i></span>
+                              <select class="selectpicker form-control" name="sal_grp">
+                                <option disabled="disabled" selected="selected">Select the Salary Group</option>
+                                @foreach($sals as $sal)
+                                <option>{{$sal->group_name}}</option>
+                                @endforeach
+                              </select>
+                           </div>
+                           @if ($errors->first('sal_grp'))
+                            <span class="invalid-feedback glyphicon glyphicon-warning-sign" role="alert">
+                            <strong>{{ $errors->first('sal_grp') }}</strong>
+                            </span>
+                            @endif
+                        </div>
+                     </div>
 
                          <div class="form-group">
                             <label class="col-md-4 control-label">Is OT Pay Allowed</label>

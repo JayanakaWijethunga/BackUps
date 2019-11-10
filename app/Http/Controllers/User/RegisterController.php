@@ -84,8 +84,8 @@ class RegisterController extends Controller
             'dept' => 'required|max:255',
             'des' => 'required|max:255',
             
-            'fixed_allowances' => 'required|max:255',
-            'fixed_deductions' => 'required|max:255',
+            'sal_grp' => 'required|max:255',
+            
             'ot' => 'required|max:255',
             'bank' => 'required|max:255',
             'bbranch' => 'required|max:255',
@@ -100,8 +100,8 @@ class RegisterController extends Controller
             'obranch.required' => 'Select the company branch',
             'dept.required' => 'Select the Department',
             'des.required' => 'Select the Designation',
-            'fixed_allowances.required' => 'Please enter the Fixed Allowance',
-            'fixed_deductions.required' => 'Please enter the Fixed Deduction',
+            'sal_grp.required' => 'Please select the salary group',
+            
             'ot.required' => 'Is OT allowed',
             'bank.required' => 'Select the Bank',
             'bbranch.required' => 'Select the Bank Branch',
@@ -144,8 +144,8 @@ class RegisterController extends Controller
 
         $userfinancial=Employee_financial::create([
             
-            'fixed_allowances' => $data['fixed_allowances'],
-            'fixed_deductions' => $data['fixed_deductions'],
+            'sal_grp' => $data['sal_grp'],
+            
             'ot' =>$data['ot'],
             'bank' =>$data['bank'],
             'bbranch' =>$data['bbranch'],

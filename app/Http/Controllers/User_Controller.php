@@ -75,10 +75,11 @@ class User_Controller extends Controller
         $propic=DB::table("user_details")->where("id", $id1)->get();
         $deps = DB::table('employee_department')->get();
         $cbranchs = DB::table('employee_branch')->get();
+        $sals = DB::table('salary_groups')->get();
         $ots = DB::table('ot_data')->get();
         $babranchs = DB::table('bank_branchs')->get();
         $banks = DB::table('banks')->get();
-        return view('employee.register',compact(['data','propic','deps','cbranchs','ots','babranchs','banks']));
+        return view('employee.register',compact(['sals','data','propic','deps','cbranchs','ots','babranchs','banks']));
         
     }
 

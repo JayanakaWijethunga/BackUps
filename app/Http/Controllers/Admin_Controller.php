@@ -65,10 +65,11 @@ class Admin_Controller extends Controller
         $data = DB::table('employee_designations')->get();
         $deps = DB::table('employee_department')->get();
         $cbranchs = DB::table('employee_branch')->get();
+        $sals = DB::table('salary_groups')->get();
         $ots = DB::table('ot_data')->get();
         $babranchs = DB::table('bank_branchs')->get();
         $banks = DB::table('banks')->get();
-        return view('user.register',compact(['data','propic','deps','cbranchs','ots','babranchs','banks']));
+        return view('user.register',compact(['sals','data','propic','deps','cbranchs','ots','babranchs','banks']));
     }
 
     public function MyProfile(){
